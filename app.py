@@ -19,12 +19,6 @@ from nba_api.live.nba.endpoints import scoreboard
 from nba_api.stats.endpoints.playbyplay import PlayByPlay
 from nba_api.stats.endpoints.leaguegamefinder import LeagueGameFinder
 
-pd.set_option('display.max_columns', None)
-pd.set_option('display.max_rows', 500)
-
-import joblib
-import pandas as pd
-
 model = joblib.load('lgb_hyperopt_nba_model.joblib')
 
 
