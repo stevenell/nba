@@ -18,11 +18,9 @@ from datetime import datetime, timedelta
 from nba_api.live.nba.endpoints import scoreboard
 from nba_api.stats.endpoints.playbyplay import PlayByPlay
 from nba_api.stats.endpoints.leaguegamefinder import LeagueGameFinder
+import joblib
 
 model = joblib.load('lgb_hyperopt_nba_model.joblib')
-
-
-# In[59]:
 
 
 def get_days_by_season(season='2022-23'):
@@ -382,8 +380,6 @@ def color_distance(color1, color2):
 
 
 color_distance('(0, 43, 92)', '(50, 24, 55)')
-
-# In[73]:
 
 
 app = Dash(__name__, external_stylesheets=external_stylesheets)
