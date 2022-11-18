@@ -10,3 +10,4 @@ dash-bootstrap-components==1.2.1
 joblib==1.0.0
 lightgbm==3.1.1
 sklearn==0.0
+dash-player==1.0.3
