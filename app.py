@@ -30,6 +30,7 @@ def get_days_by_season(season='2022-23'):
         return(games.GAME_DATE.unique())
     except:
         return(None)
+        print("NO DAYS FOUND!!!!!!!")
 
 def minutes_to_period_gc(minutes):
     minutes = int(math.floor(minutes /5))
