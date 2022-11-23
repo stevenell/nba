@@ -1,15 +1,15 @@
 ansi2html==1.8.0
 asttokens==2.1.0
 backcall==0.2.0
-bokeh @ file:///C:/Windows/TEMP/abs_4a259bc2-ed05-4a1f-808e-ac712cc0900cddqp8sp7/croots/recipe/bokeh_1658136660686/work
-Bottleneck @ file:///C:/Windows/Temp/abs_3198ca53-903d-42fd-87b4-03e6d03a8381yfwsuve8/croots/recipe/bottleneck_1657175565403/work
-Brotli @ file:///C:/Windows/Temp/abs_63l7912z0e/croots/recipe/brotli-split_1659616056886/work
-certifi @ file:///C:/b/abs_ac29jvt43w/croot/certifi_1665076682579/work/certifi
+bokeh==2.4.3
+Bottleneck==1.3.5
+Brotli==1.0.9
+certifi==2022.9.24
 charset-normalizer==2.1.1
-click @ file:///C:/ci/click_1646056762388/work
-cloudpickle @ file:///tmp/build/80754af9/cloudpickle_1632508026186/work
-colorama @ file:///C:/Windows/TEMP/abs_9439aeb1-0254-449a-96f7-33ab5eb17fc8apleb4yn/croots/recipe/colorama_1657009099097/work
-cytoolz @ file:///C:/b/abs_61m9vzb4qh/croot/cytoolz_1667465938275/work
+click==8.0.4
+cloudpickle==2.0.0
+colorama==0.4.5
+cytoolz==0.12.0
 dash==2.7.0
 dash-bootstrap-components==1.2.1
 dash-core-components==2.0.0
@@ -17,48 +17,49 @@ dash-html-components==2.0.0
 dash-player==1.0.3
 dash-renderer==1.9.0
 dash-table==5.0.0
-dask @ file:///C:/ci/dask-core_1658497112560/work
+dask==2022.7.0
 debugpy==1.6.3
 decorator==5.1.1
-distributed @ file:///C:/ci/distributed_1658523963030/work
+distributed==2022.7.0
 entrypoints==0.4
 executing==1.2.0
-Flask @ file:///C:/ci/flask_1658860024433/work
-Flask-Compress @ file:///C:/b/abs_a7ii9f64l5/croot/flask-compress_1668714951742/work
-fsspec @ file:///C:/b/abs_34frbt0c5k/croot/fsspec_1667497834549/work
-future @ file:///C:/ci_310/future_1642081234309/work
-HeapDict @ file:///Users/ktietz/demo/mc3/conda-bld/heapdict_1630598515714/work
+Flask==2.1.3
+Flask-Compress==1.13
+fsspec==2022.10.0
+future==0.18.2
+HeapDict==1.0.1
 idna==3.4
 ipykernel==6.17.1
 ipython==8.6.0
-itsdangerous @ file:///tmp/build/80754af9/itsdangerous_1621432558163/work
+itsdangerous==2.0.1
 jedi==0.18.2
-Jinja2 @ file:///C:/b/abs_7cdis66kl9/croot/jinja2_1666908141852/work
-joblib @ file:///C:/b/abs_e60_bwl1v6/croot/joblib_1666298845728/work
-jupyter-dash==0.4.2
+Jinja2==3.1.2
+joblib==1.1.1
 jupyter_client==7.4.7
 jupyter_core==5.0.0
-lightgbm @ file:///C:/ci_310/lightgbm_1642119740841/work
-locket @ file:///C:/ci/locket_1652904090946/work
-lz4 @ file:///C:/ci_310/lz4_1643300078932/work
-MarkupSafe @ file:///C:/ci/markupsafe_1654508036328/work
+jupyter-dash==0.4.2
+lightgbm==3.2.1
+locket==1.0.0
+lz4==3.1.3
+MarkupSafe==2.1.1
 matplotlib-inline==0.1.6
 mkl-fft==1.3.1
-mkl-random @ file:///C:/ci_310/mkl_random_1643050563308/work
+mkl-random==1.2.2
 mkl-service==2.4.0
-msgpack @ file:///C:/ci/msgpack-python_1652348582618/work
+msgpack==1.0.3
 nba-api==1.1.14
 nest-asyncio==1.5.6
-numexpr @ file:///C:/b/abs_a7kbak88hk/croot/numexpr_1668713882979/work
-numpy @ file:///C:/b/abs_5ct9ex77k9/croot/numpy_and_numpy_base_1668593740598/work
+numexpr==2.8.4
+numpy==1.23.4
 packaging==21.3
-pandas @ file:///C:/b/abs_97pwvlq0kg/croot/pandas_1668631294821/work
+pandas==1.5.1
 parso==0.8.3
-partd @ file:///opt/conda/conda-bld/partd_1647245470509/work
+partd==1.2.0
 pickleshare==0.7.5
 Pillow==9.2.0
+pip==22.2.2
 platformdirs==2.5.4
-plotly @ file:///C:/ci/plotly_1658160673416/work
+plotly==5.9.0
 prompt-toolkit==3.0.33
 psutil==5.9.4
 pure-eval==0.2.2
@@ -71,19 +72,21 @@ PyYAML==6.0
 pyzmq==24.0.1
 requests==2.28.1
 retrying==1.3.3
-scikit-learn @ file:///C:/b/abs_eezai1guz5/croot/scikit-learn_1667587552067/work
+scikit-learn==1.1.3
 scipy==1.9.3
+setuptools==65.5.0
 six==1.16.0
-sortedcontainers @ file:///tmp/build/80754af9/sortedcontainers_1623949099177/work
+sortedcontainers==2.4.0
 stack-data==0.6.1
-tblib @ file:///Users/ktietz/demo/mc3/conda-bld/tblib_1629402031467/work
-tenacity @ file:///C:/Windows/TEMP/abs_980d07a6-8e21-4174-9c17-7296219678ads7dhdov_/croots/recipe/tenacity_1657899108023/work
-threadpoolctl @ file:///Users/ktietz/demo/mc3/conda-bld/threadpoolctl_1629802263681/work
-toolz @ file:///C:/b/abs_cfvk6rc40d/croot/toolz_1667464080130/work
+tblib==1.7.0
+tenacity==8.0.1
+threadpoolctl==2.2.0
+toolz==0.12.0
 tornado==6.2
 traitlets==5.5.0
 urllib3==1.26.12
 wcwidth==0.2.5
-Werkzeug @ file:///opt/conda/conda-bld/werkzeug_1645628268370/work
+Werkzeug==2.0.3
+wheel==0.37.1
 wincertstore==0.2
 zict==2.1.0
