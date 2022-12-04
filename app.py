@@ -4,7 +4,7 @@ import numpy as np
 import math
 import random
 import pandas as pd
-from datetime import datetime ,timedelta
+from datetime import datetime, timedelta
 import requests
 
 from dash import html, dcc, dash_table ,Dash
@@ -64,8 +64,12 @@ def gameclock_to_seconds(gameclock, period):
     if (gameclock != 'nan') & (gameclock != ''):
         if (gameclock[:2] == 'PT'):
             t = datetime.strptime(gameclock, 'PT%MM%S.%fS')
+            t = int(timedelta(hours=t.hour, minutes=t.minute, seconds=t.second).total_seconds())
         else:
-            t = datetime.strptime(gameclock, '%M:%S')
+            try:
+                t = int(round(float(gameclock) * 60))
+            except:
+                t = datetime.strptime(gameclock, '%M:%S')
 
         t = int(timedelta(hours=t.hour, minutes=t.minute, seconds=t.second).total_seconds())
     else:
@@ -148,13 +152,15 @@ def get_game_dict(game_date):
         game_dict[g.GAME_ID][team_type + 'name'] = g.TEAM_NAME
         game_dict[g.GAME_ID][team_type + 'id'] = g.TEAM_ABBREVIATION
         game_dict[g.GAME_ID]['minutes'] = g.MIN
-        game_dict[g.GAME_ID]['period'], game_dict[g.GAME_ID]['gameClock'] = minutes_to_period_gc(g.MIN)
+        game_dict[g.GAME_ID]['period'], game_dict[g.GAME_ID]['game_clock'] = minutes_to_period_gc(g.MIN)
 
-    if d == datetime.strftime(datetime.today(), '%m/%d/%Y'):
+    #     if d == datetime.strftime(datetime.today(),'%m/%d/%Y'):
         for i, g in game_dict.items():
             if i in live_game_dict.keys():
                 game_dict[i] = get_live_game_info(i, live_game_dict)
                 game_dict[i]['live'] = True
+        else:
+            game_dict[i]['game_clock'] = 0
 
             game_dict[i]['prob'] = get_win_prob(game_dict[i]['away_score'],
                                                 game_dict[i]['home_score'],
@@ -410,9 +416,11 @@ app = Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
 app.layout = html.Div([
+    html.H1('Historical and Live Win Probability'),
+    html.H2('Steven Ellingson'),
     dcc.Store(id='game-store'),
     #    dcc.Store(id='game-date'),
-    html.Label('Season'),
+    html.Label('Choose a Season'),
     dcc.Dropdown(
         id='season-dropdown', clearable=False,
         value='2022-23', options=[
@@ -420,12 +428,12 @@ app.layout = html.Div([
             [str(q) + '-' + str(q + 1)[-2:] for q in range(1982, datetime.today().year + 1)]
         ]),
     html.Div([
-        html.Label('Game Date'),
+        html.Label('Pick a Game Date'),
         dcc.DatePickerSingle(id='dates-dropdown', date=datetime.today().strftime('%Y-%m-%d'))
     ]),
     html.Div([
 
-        html.Label('Click on a Game for More Info!'),
+        html.Label('Click on a Game for Win Probability and Highlights!'),
         dash_table.DataTable(id='game-list',
                              columns=[
                                  {'id': 'home_name', 'name': 'Home'},
@@ -463,7 +471,8 @@ app.layout = html.Div([
             id="video-player",
             url=None,
             controls=True,
-            width="100%",
+            loop=True,
+            playing=True
         )
     ]
     )
